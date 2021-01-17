@@ -1,0 +1,18 @@
+[33mcommit 2c045195eb476e0d50b8da2120fb7d00645a6a9b[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Merge: 3e1dbe6 305ebfb
+Author: Arturro99 <artur.m99@wp.pl>
+Date:   Sun Jan 17 12:45:57 2021 +0100
+
+    Merge branch 'master' of https://github.com/Arturro99/ISDP07
+
+[33mcommit 3e1dbe62a6a9c3c197d3e0e56613c4259bc5be0c[m
+Author: Arturro99 <artur.m99@wp.pl>
+Date:   Sun Jan 17 12:43:12 2021 +0100
+
+    Import project source code
+
+[33mcommit 305ebfbe67b83bd371984e6c4f1bab1cbd75c073[m
+Author: Artur Madaj <48444511+Arturro99@users.noreply.github.com>
+Date:   Sun Jan 17 12:07:24 2021 +0100
+
+    Initial commit
