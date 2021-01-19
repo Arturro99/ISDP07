@@ -10,6 +10,7 @@ and open the template in the editor.
             <class name ="AddLocationTest"/>
             <class name ="NewUserTest"/>
             <class name ="AddContractorTest"/>
+            <class name ="AddProductTest"/>
         </classes>
     </test>
 </suite>
