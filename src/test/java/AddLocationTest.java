@@ -2,7 +2,9 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -15,7 +17,11 @@ public class AddLocationTest {
     @BeforeClass(alwaysRun = true)
     public void init() {
         System.setProperty("webdriver.gecko.driver", "drivers/geckodriver");
-        driver = new FirefoxDriver();
+        FirefoxBinary bin = new FirefoxBinary();
+        bin.addCommandLineOptions("--headless");
+        FirefoxOptions options = new FirefoxOptions();
+        options.setBinary(bin);
+        driver = new FirefoxDriver(options);
         driver.get("http://localhost:58080");
     }
     

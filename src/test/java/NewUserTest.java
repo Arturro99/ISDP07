@@ -2,7 +2,9 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
@@ -28,7 +30,11 @@ public class NewUserTest {
     @BeforeTest
     public void init() throws InterruptedException {
         System.setProperty("webdriver.gecko.driver", "drivers/geckodriver");
-        driver = new FirefoxDriver();
+        FirefoxBinary bin = new FirefoxBinary();
+        bin.addCommandLineOptions("--headless");
+        FirefoxOptions options = new FirefoxOptions();
+        options.setBinary(bin);
+        driver = new FirefoxDriver(options);
         
         loginUrl = "https://localhost:58181/faces/common/signIn.xhtml";
         registrationUrl = "https://localhost:58181/faces/common/registerAccount.xhtml";
