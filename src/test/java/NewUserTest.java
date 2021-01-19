@@ -4,20 +4,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.AfterTest;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author student
- */
 public class NewUserTest {
     private WebDriver driver;
     private String userName;
@@ -36,13 +27,12 @@ public class NewUserTest {
     
     @BeforeTest
     public void init() throws InterruptedException {
-        System.setProperty("webdriver.gecko.driver", "/home/student/geckodriver");
+        System.setProperty("webdriver.gecko.driver", "drivers/geckodriver");
         driver = new FirefoxDriver();
-        Thread.sleep(3000);
         
-        loginUrl = "https://localhost:18181/faces/common/signIn.xhtml";
-        registrationUrl = "http://localhost:18080/faces/common/registerAccount.xhtml";
-        clientListUrl = "https://localhost:18181/faces/account/listNewAccounts.xhtml";
+        loginUrl = "https://localhost:58181/faces/common/signIn.xhtml";
+        registrationUrl = "http://localhost:58181/faces/common/registerAccount.xhtml";
+        clientListUrl = "https://localhost:58181/faces/account/listNewAccounts.xhtml";
         
         userName = "DMitchell";
         userPassword = "P@ssw0rd";
@@ -116,5 +106,10 @@ public class NewUserTest {
         
         driver.findElement(By.xpath("/html/body/div/div[3]/div/form/table/tbody/tr[4]/td[5]/input[2]")).click();
         driver.findElement(By.xpath("/html/body/div/div[3]/div/form/input[2]")).click();
+    }
+    
+    @AfterClass(alwaysRun = true)
+    public void end() {
+        driver.close();
     }
 }
