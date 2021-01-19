@@ -7,7 +7,7 @@ and open the template in the editor.
 <suite name="Suite" parallel="true">
     <test name="Test">
         <classes>
-            <class name ="IntegrationTests"/>
+            <class name ="AddLocationTest"/>
         </classes>
     </test>
 </suite>
