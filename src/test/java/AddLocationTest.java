@@ -21,6 +21,7 @@ public class AddLocationTest {
     
     @Test
     public void addLocationTest() {
+       
         driver.get("https://localhost:58181/faces/common/signIn.xhtml");
         // Logowanie
         driver.findElement(By.name("j_username")).sendKeys("JDoe");
