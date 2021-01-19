@@ -26,6 +26,7 @@ public class AddContractorTest {
     @Test
     public void addContractorTest() {
         //Logowanie
+        Assert.assertTrue(false);
         driver.findElement(By.xpath("/html/body/div/div[3]/div/form/table/"
                 + "tbody/tr/td/table/tbody/tr[1]/td[2]/input")).sendKeys("LRey");
         driver.findElement(By.xpath("/html/body/div/div[3]/div/form/table/"
