@@ -31,7 +31,7 @@ public class NewUserTest {
         driver = new FirefoxDriver();
         
         loginUrl = "https://localhost:58181/faces/common/signIn.xhtml";
-        registrationUrl = "http://localhost:58181/faces/common/registerAccount.xhtml";
+        registrationUrl = "https://localhost:58181/faces/common/registerAccount.xhtml";
         clientListUrl = "https://localhost:58181/faces/account/listNewAccounts.xhtml";
         
         userName = "DMitchell";
