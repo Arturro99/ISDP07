@@ -1,7 +1,9 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -13,7 +15,11 @@ public class AddProductTest {
     @BeforeClass(alwaysRun = true)
     public void init() {
         System.setProperty("webdriver.gecko.driver", "drivers/geckodriver");
-        driver = new FirefoxDriver();
+        FirefoxBinary bin = new FirefoxBinary();
+        bin.addCommandLineOptions("--headless");
+        FirefoxOptions options = new FirefoxOptions();
+        options.setBinary(bin);
+        driver = new FirefoxDriver(options);
         driver.get("https://localhost:58181/faces/common/signIn.xhtml");
     }
     
