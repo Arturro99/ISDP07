@@ -4,7 +4,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<suite name="Suite" parallel="true">
+<suite name="Suite" parallel="classes" thread-count="5">
     <test name="Test">
         <classes>
             <class name ="AddLocationTest"/>
