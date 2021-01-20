@@ -1,0 +1,36 @@
+pipeline {
+    agent any
+    environment {
+        JENKINS_PATH = '/var/lib/jenkins/workspace/ISDP_3_2'
+        PAYARA_PATH = '/home/student/JavaTools/payara5.2020.5/bin'
+    }
+    tools {
+        maven 'Maven 3.6.3'
+    }
+    stages {
+        stage('Pre-Build') {
+            steps {
+                dir('../Test') {
+                    sh "./script"
+                }
+            }
+        }
+        stage('Build') {
+            steps {
+                git 'https://github.com/Arturro99/ISDP07'
+                sh "mvn clean package -DskipTests"
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh "${PAYARA_PATH}/asadmin --port 54848 add-resources ${JENKINS_PATH}/src/main/webapp/WEB-INF/glassfish-resources.xml"
+                sh "${PAYARA_PATH}/asadmin --port 54848 deploy --force ${JENKINS_PATH}/target/WM-1.1.war"
+            }
+        }
+        stage('Testing') {
+            steps {
+                sh "mvn test"
+            }
+        }
+    }
+}
